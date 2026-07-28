@@ -22,6 +22,8 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
   const [appName, setAppName] = useState('');
   const [pitch, setPitch] = useState('');
   const [link, setLink] = useState('');
+  const [estimatedTimeline, setEstimatedTimeline] = useState('');
+  const [contactNote, setContactNote] = useState('');
   const [isExistingTool, setIsExistingTool] = useState(true);
   const [error, setError] = useState('');
 
@@ -30,7 +32,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!appName.trim()) {
-      setError('Please provide an App / Tool Name.');
+      setError(isExistingTool ? 'Please provide an App / Tool Name.' : 'Please name your proposed solution.');
       return;
     }
     if (!pitch.trim() || pitch.length < 15) {
@@ -41,14 +43,20 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
       setError('Pitch cannot exceed 300 characters.');
       return;
     }
+    if (!isExistingTool && !estimatedTimeline) {
+      setError('Please select an estimated timeline for your build.');
+      return;
+    }
 
     onSubmitSolution({
       problem_id: problem.id,
       problem_title: problem.title,
       app_name: appName.trim(),
       pitch: pitch.trim(),
-      link: link.trim() || undefined,
+      link: isExistingTool ? (link.trim() || undefined) : undefined,
       is_existing_tool: isExistingTool,
+      estimated_timeline: isExistingTool ? undefined : estimatedTimeline,
+      contact_note: isExistingTool ? undefined : (contactNote.trim() || undefined),
       solver_id: currentUser.id,
       solver: currentUser,
       claimed_at: new Date().toISOString(),
@@ -60,6 +68,8 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
     setAppName('');
     setPitch('');
     setLink('');
+    setEstimatedTimeline('');
+    setContactNote('');
     setError('');
     onClose();
   };
@@ -160,14 +170,14 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
             <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
               isDarkMode ? 'text-zinc-400' : 'text-stone-500'
             }`}>
-              App / Tool Name <span className="text-indigo-500">*</span>
+              {isExistingTool ? 'App / Tool Name' : 'Proposed Solution Name'} <span className="text-indigo-500">*</span>
             </label>
             <input
               type="text"
               id="input-solution-app-name"
               value={appName}
               onChange={(e) => setAppName(e.target.value)}
-              placeholder="e.g. EdgeGuard Alert or WhisperDesk"
+              placeholder={isExistingTool ? 'e.g. EdgeGuard Alert or WhisperDesk' : 'e.g. "Auto-Archive Bot" (working title is fine)'}
               className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
@@ -182,7 +192,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
               <label className={`text-[12px] font-semibold tracking-wider uppercase ${
                 isDarkMode ? 'text-zinc-400' : 'text-stone-500'
               }`}>
-                Short Pitch (Max 300 chars) <span className="text-indigo-500">*</span>
+                {isExistingTool ? 'Short Pitch (Max 300 chars)' : 'Proposed Solution Concept (Max 300 chars)'} <span className="text-indigo-500">*</span>
               </label>
               <span className={`text-[11px] font-mono ${pitch.length > 300 ? 'text-red-500 font-bold' : 'opacity-60'}`}>
                 {pitch.length}/300
@@ -194,7 +204,11 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
               maxLength={300}
               value={pitch}
               onChange={(e) => setPitch(e.target.value)}
-              placeholder="Concise 2-sentence value proposition. Force clarity: how exactly does your tool solve this specific pain point?"
+              placeholder={
+                isExistingTool
+                  ? 'Concise 2-sentence value proposition. Force clarity: how exactly does your tool solve this specific pain point?'
+                  : 'How would you approach building this? What would the solution actually do?'
+              }
               className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none resize-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
@@ -203,31 +217,84 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
             />
           </div>
 
-          {/* External URL */}
-          <div>
-            <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
-              isDarkMode ? 'text-zinc-400' : 'text-stone-500'
-            }`}>
-              External Link / Prototype URL
-            </label>
-            <div className="relative">
-              <LinkIcon className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
-                isDarkMode ? 'text-zinc-500' : 'text-stone-400'
-              }`} />
-              <input
-                type="url"
-                id="input-solution-link"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-                placeholder="https://yourtool.com or demo link"
-                className={`w-full rounded border py-2.5 pl-9 pr-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
-                  isDarkMode
-                    ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
-                    : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
-                }`}
-              />
+          {/* Branch: EXISTING gets a link field. WOULD_BUILD gets timeline + optional contact note instead. */}
+          {isExistingTool ? (
+            <div>
+              <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
+                isDarkMode ? 'text-zinc-400' : 'text-stone-500'
+              }`}>
+                External Link / Prototype URL
+              </label>
+              <div className="relative">
+                <LinkIcon className={`absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 ${
+                  isDarkMode ? 'text-zinc-500' : 'text-stone-400'
+                }`} />
+                <input
+                  type="url"
+                  id="input-solution-link"
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
+                  placeholder="https://yourtool.com or demo link"
+                  className={`w-full rounded border py-2.5 pl-9 pr-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+                    isDarkMode
+                      ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
+                      : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
+                  }`}
+                />
+              </div>
             </div>
-          </div>
+          ) : (
+            <>
+              <div>
+                <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
+                  isDarkMode ? 'text-zinc-400' : 'text-stone-500'
+                }`}>
+                  Estimated Timeline <span className="text-indigo-500">*</span>
+                </label>
+                <select
+                  id="input-solution-timeline"
+                  value={estimatedTimeline}
+                  onChange={(e) => setEstimatedTimeline(e.target.value)}
+                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none cursor-pointer ${
+                    isDarkMode
+                      ? 'border-white/10 bg-[#0b0b0c] text-white'
+                      : 'border-stone-200 bg-stone-50 text-stone-900'
+                  }`}
+                >
+                  <option value="" disabled>Select a realistic timeframe...</option>
+                  <option value="A few days">A few days</option>
+                  <option value="1-2 weeks">1-2 weeks</option>
+                  <option value="2-4 weeks">2-4 weeks</option>
+                  <option value="1-2 months">1-2 months</option>
+                  <option value="3+ months">3+ months</option>
+                </select>
+              </div>
+
+              <div>
+                <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
+                  isDarkMode ? 'text-zinc-400' : 'text-stone-500'
+                }`}>
+                  Contact Note (optional)
+                </label>
+                <input
+                  type="text"
+                  id="input-solution-contact-note"
+                  value={contactNote}
+                  onChange={(e) => setContactNote(e.target.value)}
+                  placeholder="How should interested posters reach you? e.g. a handle, Discord, etc."
+                  maxLength={140}
+                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+                    isDarkMode
+                      ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
+                      : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
+                  }`}
+                />
+                <p className={`mt-1 text-[11px] ${isDarkMode ? 'text-zinc-500' : 'text-stone-400'}`}>
+                  Your name and profile are already visible to posters — this is optional, only if you want to share another way to reach you.
+                </p>
+              </div>
+            </>
+          )}
 
           {/* Submit CTA */}
           <div className={`flex items-center justify-end gap-3 pt-4 border-t ${

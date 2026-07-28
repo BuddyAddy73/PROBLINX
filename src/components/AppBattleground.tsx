@@ -316,7 +316,20 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                       <ExternalLink className="h-3 w-3" />
                     </a>
                   )}
+
+                  {!sol.is_existing_tool && sol.estimated_timeline && (
+                    <span className={`flex items-center gap-1 ${isDarkMode ? 'text-zinc-400' : 'text-stone-500'}`}>
+                      <Timer className="h-3 w-3" />
+                      <span>ETA: {sol.estimated_timeline}</span>
+                    </span>
+                  )}
                 </div>
+
+                {!sol.is_existing_tool && sol.contact_note && (
+                  <div className={`text-[11px] font-mono ${isDarkMode ? 'text-zinc-500' : 'text-stone-400'}`}>
+                    Contact: {sol.contact_note}
+                  </div>
+                )}
 
               </div>
 

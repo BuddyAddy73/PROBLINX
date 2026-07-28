@@ -219,6 +219,8 @@ export default function App() {
         app_name: newSolData.app_name || 'New Tool',
         pitch: newSolData.pitch || '',
         external_link: newSolData.link || null,
+        estimated_timeline: newSolData.estimated_timeline || null,
+        contact_note: newSolData.contact_note || null,
         solution_type: (newSolData.is_existing_tool ?? true) ? 'EXISTING' : 'WOULD_BUILD',
         rating_avg: 0,
         review_count: 0,

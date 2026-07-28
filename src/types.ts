@@ -41,8 +41,10 @@ export interface Solution {
   solver: User;
   app_name: string;
   pitch: string; // Max 300 chars
-  link?: string; // External URL or live app
+  link?: string; // External URL or live app — EXISTING_TOOL only
   is_existing_tool: boolean; // true = existing tool, false = "would build"
+  estimated_timeline?: string; // WOULD_BUILD only
+  contact_note?: string; // WOULD_BUILD only, solver-controlled optional contact hint
   claimed_at: string;
   submitted_at: string;
   reviews_count: number;

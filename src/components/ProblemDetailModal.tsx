@@ -284,6 +284,12 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                           </a>
                         )}
 
+                        {!sol.is_existing_tool && sol.estimated_timeline && (
+                          <span className="font-mono text-xs opacity-70">
+                            ETA: {sol.estimated_timeline}
+                          </span>
+                        )}
+
                         <button
                           onClick={() => { onClose(); onTestAndReview(sol); }}
                           className="rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-1.5 font-mono text-xs font-bold uppercase text-white transition cursor-pointer active:scale-95 shadow-sm"

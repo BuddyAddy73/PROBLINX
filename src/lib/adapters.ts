@@ -41,6 +41,8 @@ export interface DbSolution {
   pitch: string;
   solution_type: 'EXISTING' | 'WOULD_BUILD';
   external_link: string | null;
+  estimated_timeline: string | null;
+  contact_note: string | null;
   rating_avg: number;
   review_count: number;
   created_at: string;
@@ -103,6 +105,8 @@ export function dbSolutionToSolution(s: DbSolution): Solution {
     pitch: s.pitch,
     link: s.external_link ?? undefined,
     is_existing_tool: s.solution_type === 'EXISTING',
+    estimated_timeline: s.estimated_timeline ?? undefined,
+    contact_note: s.contact_note ?? undefined,
     claimed_at: s.created_at,
     submitted_at: s.created_at,
     reviews_count: s.review_count,
