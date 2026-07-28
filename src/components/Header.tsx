@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Flame, Swords, Plus, Sparkles, Sun, Moon, Shield, LogOut, User as UserIcon, ChevronDown } from 'lucide-react';
 import { ActiveFeedStream, User } from '../types';
-import { calculateSolverRank } from '../utils/rankUtils';
+import { getTagInfo } from '../utils/tagUtils';
 
 interface HeaderProps {
   activeStream: ActiveFeedStream;
@@ -34,7 +34,6 @@ export const Header: React.FC<HeaderProps> = ({
   onSignOut,
   onOpenProfile,
 }) => {
-  const solverRank = calculateSolverRank(currentUserSolutionsCount);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -201,13 +200,23 @@ export const Header: React.FC<HeaderProps> = ({
                   {currentUser.display_name}
                 </span>
                 <span
-                  title={`${currentUserSolutionsCount} solutions submitted`}
+                  title={
+                    currentUser.user_tag
+                      ? getTagInfo(currentUser.user_tag)?.description
+                      : 'Set your tag from My Profile'
+                  }
                   className={`inline-flex items-center gap-1 rounded px-1.5 py-0.2 text-[9px] font-mono font-bold uppercase border transition ${
-                    isDarkMode ? solverRank.badgeClassDark : solverRank.badgeClassLight
+                    currentUser.user_tag
+                      ? isDarkMode
+                        ? getTagInfo(currentUser.user_tag)?.badgeClassDark
+                        : getTagInfo(currentUser.user_tag)?.badgeClassLight
+                      : isDarkMode
+                        ? 'bg-zinc-800/60 text-zinc-500 border-zinc-700'
+                        : 'bg-stone-100 text-stone-400 border-stone-200'
                   }`}
                 >
                   <Shield className="h-2.5 w-2.5" />
-                  <span>{solverRank.rank}</span>
+                  <span>{currentUser.user_tag ? getTagInfo(currentUser.user_tag)?.label : 'Untagged'}</span>
                 </span>
                 <ChevronDown className={`h-3 w-3 transition-transform ${isMenuOpen ? 'rotate-180' : ''} ${isDarkMode ? 'text-zinc-500' : 'text-stone-400'}`} />
               </button>
