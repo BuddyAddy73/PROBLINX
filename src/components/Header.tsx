@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Flame, Swords, Plus, Sparkles, Sun, Moon, Shield, LogOut, User as UserIcon, ChevronDown } from 'lucide-react';
+import { Flame, Swords, Plus, Sparkles, Sun, Moon, Shield, LogOut, User as UserIcon, ChevronDown, Search } from 'lucide-react';
 import { ActiveFeedStream, User } from '../types';
 import { getTagInfo } from '../utils/tagUtils';
 
@@ -17,6 +17,7 @@ interface HeaderProps {
   onSignInWithGoogle: () => void;
   onSignOut: () => void;
   onOpenProfile: () => void;
+  onOpenSearch: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -33,6 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
   onSignInWithGoogle,
   onSignOut,
   onOpenProfile,
+  onOpenSearch,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -137,9 +139,42 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Right: Theme Toggle + Profile Chip + CTA */}
+        {/* Right: Search + Theme Toggle + Profile Chip + CTA */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          
+
+          {/* User/Content Search — Cmd+K */}
+          <button
+            id="search-trigger-btn"
+            onClick={onOpenSearch}
+            aria-label="Search users, problems, and solutions"
+            title="Search (Ctrl/Cmd + K)"
+            className={`hidden sm:flex items-center gap-2 h-9 rounded-md border px-3 transition cursor-pointer active:scale-95 ${
+              isDarkMode
+                ? 'border-white/10 bg-[#141416] text-zinc-400 hover:bg-white/10'
+                : 'border-stone-200 bg-stone-100 text-stone-500 hover:bg-stone-200'
+            }`}
+          >
+            <Search className="h-3.5 w-3.5" />
+            <span className="text-xs font-mono">Search</span>
+            <kbd className={`text-[9px] font-mono px-1 rounded border ${
+              isDarkMode ? 'border-zinc-700 text-zinc-500' : 'border-stone-300 text-stone-400'
+            }`}>
+              ⌘K
+            </kbd>
+          </button>
+          {/* Mobile: icon-only search trigger */}
+          <button
+            onClick={onOpenSearch}
+            aria-label="Search"
+            className={`sm:hidden flex h-9 w-9 items-center justify-center rounded-md border transition cursor-pointer active:scale-95 ${
+              isDarkMode
+                ? 'border-white/10 bg-[#141416] text-zinc-400 hover:bg-white/10'
+                : 'border-stone-200 bg-stone-100 text-stone-500 hover:bg-stone-200'
+            }`}
+          >
+            <Search className="h-4 w-4" />
+          </button>
+
           {/* Theme Toggle */}
           <button
             id="theme-toggle-btn"

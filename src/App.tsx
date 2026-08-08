@@ -7,6 +7,8 @@ import { SubmitSolutionModal } from './components/SubmitSolutionModal';
 import { TestReviewModal } from './components/TestReviewModal';
 import { ProblemDetailModal } from './components/ProblemDetailModal';
 import { ProfileModal } from './components/ProfileModal';
+import { UserSearchModal } from './components/UserSearchModal';
+import { PublicProfileModal } from './components/PublicProfileModal';
 
 import { mockUsers } from './data/mockData';
 import { ActiveFeedStream, Problem, Solution, Review, User } from './types';
@@ -119,6 +121,20 @@ export default function App() {
   }, [isAuthReady, fetchFeed]);
   const [isPostProblemOpen, setIsPostProblemOpen] = useState(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [viewingUserId, setViewingUserId] = useState<string | null>(null);
+
+  // Global Ctrl/Cmd+K to open user search from anywhere in the app
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
   const [solvingProblem, setSolvingProblem] = useState<Problem | null>(null);
   const [testingSolution, setTestingSolution] = useState<Solution | null>(null);
   const [selectedProblem, setSelectedProblem] = useState<Problem | null>(null);
@@ -350,6 +366,7 @@ export default function App() {
         onSignInWithGoogle={signInWithGoogle}
         onSignOut={signOut}
         onOpenProfile={() => setIsProfileModalOpen(true)}
+        onOpenSearch={() => setIsSearchOpen(true)}
       />
 
       {/* Main Container */}
@@ -417,6 +434,22 @@ export default function App() {
         currentUser={currentUser}
         isDarkMode={isDarkMode}
         onProfileUpdated={refreshProfile}
+      />
+
+      <UserSearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onSelectUser={(userId) => {
+          setIsSearchOpen(false);
+          setViewingUserId(userId);
+        }}
+        isDarkMode={isDarkMode}
+      />
+
+      <PublicProfileModal
+        userId={viewingUserId}
+        onClose={() => setViewingUserId(null)}
+        isDarkMode={isDarkMode}
       />
 
       <SubmitSolutionModal
