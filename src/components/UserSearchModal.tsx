@@ -146,7 +146,7 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({
                 {u.avatar_url ? (
                   <img src={u.avatar_url} alt={u.username} className="h-8 w-8 rounded-full object-cover" />
                 ) : (
-                  <div className="h-8 w-8 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white shrink-0">
+                  <div className="h-8 w-8 rounded-full bg-orange-600 flex items-center justify-center text-xs font-bold text-white shrink-0">
                     {u.username?.[0]?.toUpperCase() ?? '?'}
                   </div>
                 )}

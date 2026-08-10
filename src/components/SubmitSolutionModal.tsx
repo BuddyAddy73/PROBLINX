@@ -96,14 +96,14 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
 
         {/* Header */}
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
+          <div className="flex items-center gap-2 text-xs font-mono font-medium text-orange-600 dark:text-orange-400">
             <Swords className="h-3.5 w-3.5" />
             <span>PROBLINX // SUBMIT_PITCH</span>
           </div>
           <h2 className="text-[17px] sm:text-xl font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug uppercase">
             PITCH SOLUTION FOR PROBLEM
           </h2>
-          <p className={`text-[13px] font-normal leading-relaxed line-clamp-2 italic p-2.5 rounded border border-l-2 border-l-indigo-500 ${
+          <p className={`text-[13px] font-normal leading-relaxed line-clamp-2 italic p-2.5 rounded border border-l-2 border-l-orange-500 ${
             isDarkMode
               ? 'bg-[#0b0b0c] border-white/10 text-zinc-300'
               : 'bg-stone-50 border-stone-200 text-stone-600'
@@ -135,8 +135,8 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
                 className={`flex items-center justify-center gap-2 rounded p-3 font-mono text-xs font-bold border transition cursor-pointer ${
                   isExistingTool
                     ? isDarkMode
-                      ? 'bg-indigo-950/60 border-indigo-500 text-indigo-300'
-                      : 'bg-indigo-50 border-indigo-400 text-indigo-800'
+                      ? 'bg-orange-950/60 border-orange-500 text-orange-300'
+                      : 'bg-orange-50 border-orange-400 text-orange-800'
                     : isDarkMode
                       ? 'bg-[#0b0b0c] border-white/10 text-zinc-400 hover:text-white'
                       : 'bg-stone-100 border-stone-200 text-stone-600'
@@ -170,7 +170,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
             <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
               isDarkMode ? 'text-zinc-400' : 'text-stone-500'
             }`}>
-              {isExistingTool ? 'App / Tool Name' : 'Proposed Solution Name'} <span className="text-indigo-500">*</span>
+              {isExistingTool ? 'App / Tool Name' : 'Proposed Solution Name'} <span className="text-orange-500">*</span>
             </label>
             <input
               type="text"
@@ -178,7 +178,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
               value={appName}
               onChange={(e) => setAppName(e.target.value)}
               placeholder={isExistingTool ? 'e.g. EdgeGuard Alert or WhisperDesk' : 'e.g. "Auto-Archive Bot" (working title is fine)'}
-              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -192,7 +192,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
               <label className={`text-[12px] font-semibold tracking-wider uppercase ${
                 isDarkMode ? 'text-zinc-400' : 'text-stone-500'
               }`}>
-                {isExistingTool ? 'Short Pitch (Max 300 chars)' : 'Proposed Solution Concept (Max 300 chars)'} <span className="text-indigo-500">*</span>
+                {isExistingTool ? 'Short Pitch (Max 300 chars)' : 'Proposed Solution Concept (Max 300 chars)'} <span className="text-orange-500">*</span>
               </label>
               <span className={`text-[11px] font-mono ${pitch.length > 300 ? 'text-red-500 font-bold' : 'opacity-60'}`}>
                 {pitch.length}/300
@@ -209,7 +209,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
                   ? 'Concise 2-sentence value proposition. Force clarity: how exactly does your tool solve this specific pain point?'
                   : 'How would you approach building this? What would the solution actually do?'
               }
-              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none resize-none ${
+              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none resize-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -235,7 +235,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
                   value={link}
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="https://yourtool.com or demo link"
-                  className={`w-full rounded border py-2.5 pl-9 pr-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+                  className={`w-full rounded border py-2.5 pl-9 pr-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none ${
                     isDarkMode
                       ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                       : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -249,13 +249,13 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
                 <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
                   isDarkMode ? 'text-zinc-400' : 'text-stone-500'
                 }`}>
-                  Estimated Timeline <span className="text-indigo-500">*</span>
+                  Estimated Timeline <span className="text-orange-500">*</span>
                 </label>
                 <select
                   id="input-solution-timeline"
                   value={estimatedTimeline}
                   onChange={(e) => setEstimatedTimeline(e.target.value)}
-                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none cursor-pointer ${
+                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none cursor-pointer ${
                     isDarkMode
                       ? 'border-white/10 bg-[#0b0b0c] text-white'
                       : 'border-stone-200 bg-stone-50 text-stone-900'
@@ -283,7 +283,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
                   onChange={(e) => setContactNote(e.target.value)}
                   placeholder="How should interested posters reach you? e.g. a handle, Discord, etc."
                   maxLength={140}
-                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none ${
                     isDarkMode
                       ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                       : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -314,7 +314,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
             <button
               type="submit"
               id="btn-submit-solution-form"
-              className="rounded bg-indigo-600 hover:bg-indigo-500 px-5 py-2 font-mono text-xs font-bold uppercase text-white shadow-sm cursor-pointer active:scale-95 transition"
+              className="rounded bg-orange-600 hover:bg-orange-500 px-5 py-2 font-mono text-xs font-bold uppercase text-white shadow-sm cursor-pointer active:scale-95 transition"
             >
               SUBMIT_PITCH
             </button>

@@ -76,9 +76,9 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         {/* Header: avatar + name + username */}
         <div className="flex items-center gap-3 mb-6">
           {currentUser.avatar_url ? (
-            <img src={currentUser.avatar_url} alt={currentUser.display_name} className="h-14 w-14 rounded-full object-cover ring-2 ring-indigo-500/40" />
+            <img src={currentUser.avatar_url} alt={currentUser.display_name} className="h-14 w-14 rounded-full object-cover ring-2 ring-orange-500/40" />
           ) : (
-            <div className="h-14 w-14 rounded-full bg-indigo-600 flex items-center justify-center text-lg font-bold text-white">
+            <div className="h-14 w-14 rounded-full bg-orange-600 flex items-center justify-center text-lg font-bold text-white">
               {currentUser.display_name?.[0]?.toUpperCase() ?? '?'}
             </div>
           )}
@@ -131,8 +131,8 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
                 } ${
                   isSelected
                     ? isDarkMode
-                      ? 'border-indigo-500 bg-indigo-500/10'
-                      : 'border-indigo-400 bg-indigo-50'
+                      ? 'border-orange-500 bg-orange-500/10'
+                      : 'border-orange-400 bg-orange-50'
                     : isDarkMode
                       ? 'border-white/10 hover:border-white/20'
                       : 'border-stone-200 hover:border-stone-300'
@@ -140,7 +140,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
               >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-sm">{tag.label}</span>
-                  {isSelected && <Check className="h-4 w-4 text-indigo-500" />}
+                  {isSelected && <Check className="h-4 w-4 text-orange-500" />}
                 </div>
                 <p className={`text-xs mt-0.5 ${isDarkMode ? 'text-zinc-400' : 'text-stone-500'}`}>{tag.description}</p>
               </button>
@@ -164,7 +164,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
         <button
           onClick={handleSave}
           disabled={!hasChangedSelection || isInCooldown || isSaving}
-          className="w-full rounded-md bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed py-2.5 font-mono text-sm font-bold uppercase text-white shadow-md shadow-indigo-600/20 transition cursor-pointer active:scale-95"
+          className="w-full rounded-md bg-orange-600 hover:bg-orange-500 disabled:opacity-40 disabled:cursor-not-allowed py-2.5 font-mono text-sm font-bold uppercase text-white shadow-md shadow-orange-600/20 transition cursor-pointer active:scale-95"
         >
           {isSaving ? 'Saving...' : 'Save Tag'}
         </button>

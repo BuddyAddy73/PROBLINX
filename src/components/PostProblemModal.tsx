@@ -89,7 +89,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
 
         {/* Modal Header */}
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
+          <div className="flex items-center gap-2 text-xs font-mono font-medium text-orange-600 dark:text-orange-400">
             <Sparkles className="h-3.5 w-3.5" />
             <span>PROBLINX // POST_PROBLEM</span>
           </div>
@@ -116,7 +116,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
             <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
               isDarkMode ? 'text-zinc-400' : 'text-stone-500'
             }`}>
-              Problem Title / Summary <span className="text-indigo-500">*</span>
+              Problem Title / Summary <span className="text-orange-500">*</span>
             </label>
             <input
               type="text"
@@ -124,7 +124,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g., Real-time API Rate Limit Spike Alerting for Next.js"
-              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -137,7 +137,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
             <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
               isDarkMode ? 'text-zinc-400' : 'text-stone-500'
             }`}>
-              Detailed Workflow Pain <span className="text-indigo-500">*</span>
+              Detailed Workflow Pain <span className="text-orange-500">*</span>
             </label>
             <textarea
               id="input-problem-desc"
@@ -145,7 +145,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Describe what triggers the problem, who it impacts, and why current workflows fail..."
-              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none resize-none ${
+              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none resize-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -166,7 +166,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
               value={attemptedSolutions}
               onChange={(e) => setAttemptedSolutions(e.target.value)}
               placeholder="e.g. Set up manual Datadog alerts ($300/mo) but latency missed microbursts..."
-              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none resize-none ${
+              className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none resize-none ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -188,7 +188,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
                 onChange={(e) => setTagInput(e.target.value)}
                 onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); handleAddTag(); } }}
                 placeholder="Type tag (e.g. DevTools) & press Enter"
-                className={`flex-1 rounded border px-3 py-2 text-[14px] font-normal focus:border-indigo-500 focus:outline-none ${
+                className={`flex-1 rounded border px-3 py-2 text-[14px] font-normal focus:border-orange-500 focus:outline-none ${
                   isDarkMode
                     ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                     : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -248,7 +248,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
             <button
               type="submit"
               id="btn-submit-problem-form"
-              className="rounded bg-indigo-600 hover:bg-indigo-500 px-5 py-2 font-mono text-xs font-bold uppercase text-white shadow-sm cursor-pointer active:scale-95 transition"
+              className="rounded bg-orange-600 hover:bg-orange-500 px-5 py-2 font-mono text-xs font-bold uppercase text-white shadow-sm cursor-pointer active:scale-95 transition"
             >
               POST_TO_PROBLINX
             </button>

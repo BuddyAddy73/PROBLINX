@@ -64,10 +64,10 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
         return (
           <span className={`inline-flex items-center gap-1 text-[11px] font-mono font-medium tracking-wide px-2 py-0.5 rounded uppercase border ${
             isDarkMode
-              ? 'bg-indigo-950/60 text-indigo-300 border-indigo-800/50'
-              : 'bg-indigo-50 text-indigo-700 border-indigo-200'
+              ? 'bg-orange-950/60 text-orange-300 border-orange-800/50'
+              : 'bg-orange-50 text-orange-700 border-orange-200'
           }`}>
-            <span className={`h-1.5 w-1.5 rounded-full ${isDarkMode ? 'bg-indigo-400' : 'bg-indigo-600'}`}></span>
+            <span className={`h-1.5 w-1.5 rounded-full ${isDarkMode ? 'bg-orange-400' : 'bg-orange-600'}`}></span>
             Open
           </span>
         );
@@ -126,7 +126,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
           <button
             id="btn-post-problem-banner"
             onClick={onOpenPostProblem}
-            className="font-mono text-xs font-extrabold uppercase px-4 py-2 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 transition cursor-pointer active:scale-95"
+            className="font-mono text-xs font-extrabold uppercase px-4 py-2 rounded-md bg-orange-600 hover:bg-orange-500 text-white shadow-md shadow-orange-600/20 transition cursor-pointer active:scale-95"
           >
             + POST NEW PAIN
           </button>
@@ -150,7 +150,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                 onFocus={() => setIsSearchFocused(true)}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="> FILTER_BY_KEYWORD..."
-                className={`w-full rounded-md border py-2.5 pl-10 pr-4 font-mono text-xs focus:border-indigo-500 focus:outline-none transition ${
+                className={`w-full rounded-md border py-2.5 pl-10 pr-4 font-mono text-xs focus:border-orange-500 focus:outline-none transition ${
                   isDarkMode
                     ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                     : 'border-stone-200 bg-white text-stone-900 placeholder-stone-400 shadow-xs'
@@ -169,7 +169,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
               >
                 <div className="flex items-center justify-between px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500">
                   <span className="flex items-center gap-1.5">
-                    <History className="h-3 w-3 text-indigo-500" />
+                    <History className="h-3 w-3 text-orange-500" />
                     RECENT_SEARCHES
                   </span>
                   <button
@@ -223,7 +223,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                 onClick={() => setSelectedStatus(st)}
                 className={`rounded px-2.5 py-1 text-[11px] font-bold uppercase transition cursor-pointer ${
                   selectedStatus === st
-                    ? 'bg-indigo-600 text-white'
+                    ? 'bg-orange-600 text-white'
                     : isDarkMode
                       ? 'text-zinc-400 hover:text-white'
                       : 'text-stone-600 hover:text-stone-900'
@@ -242,14 +242,14 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
         }`}>
           <div className="flex items-center justify-between mb-2 px-0.5">
             <span className="text-[12px] font-semibold tracking-wider uppercase text-stone-500 dark:text-zinc-400 flex items-center gap-1.5 font-mono">
-              <Tag className="h-3.5 w-3.5 text-indigo-500" />
+              <Tag className="h-3.5 w-3.5 text-orange-500" />
               CATEGORY FILTER
             </span>
             {selectedTag && (
               <button
                 type="button"
                 onClick={() => setSelectedTag(null)}
-                className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 hover:underline cursor-pointer flex items-center gap-1"
+                className="text-[11px] font-mono text-orange-600 dark:text-orange-400 hover:underline cursor-pointer flex items-center gap-1"
               >
                 CLEAR FILTER (#{selectedTag})
               </button>
@@ -263,7 +263,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
               onClick={() => setSelectedTag(null)}
               className={`shrink-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-medium tracking-wide transition cursor-pointer active:scale-95 ${
                 selectedTag === null
-                  ? 'bg-indigo-600 text-white shadow-sm border border-indigo-500 font-semibold'
+                  ? 'bg-orange-600 text-white shadow-sm border border-orange-500 font-semibold'
                   : isDarkMode
                     ? 'bg-[#18181b] text-zinc-400 border border-white/10 hover:border-zinc-700 hover:text-zinc-200'
                     : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-100 hover:text-stone-900 shadow-xs'
@@ -290,7 +290,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                   onClick={() => setSelectedTag(isActive ? null : tag)}
                   className={`shrink-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-medium tracking-wide transition cursor-pointer active:scale-95 ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-sm border border-indigo-500 font-semibold'
+                      ? 'bg-orange-600 text-white shadow-sm border border-orange-500 font-semibold'
                       : isDarkMode
                         ? 'bg-[#18181b] text-zinc-400 border border-white/10 hover:border-zinc-700 hover:text-zinc-200'
                         : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-100 hover:text-stone-900 shadow-xs'
@@ -327,7 +327,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
           </p>
           <button
             onClick={() => { setSearchQuery(''); setSelectedTag(null); setSelectedStatus('all'); }}
-            className="mt-4 text-xs text-indigo-600 dark:text-indigo-400 hover:underline font-medium cursor-pointer"
+            className="mt-4 text-xs text-orange-600 dark:text-orange-400 hover:underline font-medium cursor-pointer"
           >
             Clear all filters
           </button>
@@ -351,7 +351,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                   <img
                     src={prob.poster?.avatar_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'}
                     alt={prob.poster?.display_name || 'User'}
-                    className="h-5 w-5 rounded-full object-cover border border-indigo-500/40"
+                    className="h-5 w-5 rounded-full object-cover border border-orange-500/40"
                   />
                   <span>u/{prob.poster?.display_name?.split(' ')[0] || 'Member'}</span>
                 </div>
@@ -362,7 +362,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                 {/* Meta Line: Status + Problem ID + Poster // Tag in Monospace */}
                 <div className="flex items-center gap-2.5 font-sans">
                   {getStatusBadge(prob.status)}
-                  <span className="font-mono text-[11px] font-medium text-indigo-600 dark:text-indigo-400">
+                  <span className="font-mono text-[11px] font-medium text-orange-600 dark:text-orange-400">
                     #{prob.id.slice(-4)}
                   </span>
                   <span className="text-[12px] font-normal text-stone-400 dark:text-zinc-500">
@@ -374,7 +374,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                 <div className="space-y-1.5">
                   <h3
                     onClick={() => onOpenDetail(prob)}
-                    className="text-[17px] font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug transition cursor-pointer hover:text-indigo-600 dark:hover:text-indigo-400"
+                    className="text-[17px] font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug transition cursor-pointer hover:text-orange-600 dark:hover:text-orange-400"
                   >
                     {prob.title}
                   </h3>
@@ -385,7 +385,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
 
                 {/* Tried Quote */}
                 {prob.attempted_solutions && (
-                  <div className={`mt-3 p-3 rounded border-l-2 border-indigo-500 text-[13px] font-normal leading-relaxed italic ${
+                  <div className={`mt-3 p-3 rounded border-l-2 border-orange-500 text-[13px] font-normal leading-relaxed italic ${
                     isDarkMode ? 'bg-[#0b0b0c] text-zinc-400' : 'bg-stone-100 text-stone-700'
                   }`}>
                     "{prob.attempted_solutions}"
@@ -406,7 +406,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                         }}
                         className={`px-2 py-0.5 rounded border transition cursor-pointer active:scale-95 ${
                           isSelected
-                            ? 'bg-indigo-600 text-white border-indigo-500 font-semibold'
+                            ? 'bg-orange-600 text-white border-orange-500 font-semibold'
                             : isDarkMode
                               ? 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-zinc-200'
                               : 'bg-stone-100 text-stone-600 border-stone-200/80 hover:bg-stone-200 hover:text-stone-900'
@@ -428,13 +428,13 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                     disabled={upvotedProblemIds.has(prob.id)}
                     className={`flex items-center gap-1.5 font-bold transition ${
                       upvotedProblemIds.has(prob.id)
-                        ? 'text-indigo-500 cursor-default'
-                        : `cursor-pointer hover:text-indigo-500 ${isDarkMode ? 'text-zinc-300' : 'text-stone-700'}`
+                        ? 'text-orange-500 cursor-default'
+                        : `cursor-pointer hover:text-orange-500 ${isDarkMode ? 'text-zinc-300' : 'text-stone-700'}`
                     }`}
                     title={upvotedProblemIds.has(prob.id) ? 'Already upvoted' : 'Upvote problem'}
                   >
                     <Flame
-                      className={`shrink-0 ${upvotedProblemIds.has(prob.id) ? 'text-indigo-500 fill-indigo-500' : 'text-amber-500'}`}
+                      className={`shrink-0 ${upvotedProblemIds.has(prob.id) ? 'text-orange-500 fill-orange-500' : 'text-amber-500'}`}
                       style={{ width: '22px', height: '27px' }}
                     />
                     <span style={{ fontSize: '15px' }}>{prob.upvotes || 0} UP</span>
@@ -455,7 +455,7 @@ export const ProblemWishlist: React.FC<ProblemWishlistProps> = ({
                 <button
                   id={`btn-solve-${prob.id}`}
                   onClick={() => onSolveProblem(prob)}
-                  className="font-mono text-xs font-bold uppercase px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer active:scale-95"
+                  className="font-mono text-xs font-bold uppercase px-4 py-2 rounded bg-orange-600 hover:bg-orange-500 text-white shadow-sm transition cursor-pointer active:scale-95"
                 >
                   PITCH
                 </button>

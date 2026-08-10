@@ -113,9 +113,9 @@ export const PublicProfileModal: React.FC<PublicProfileModalProps> = ({ userId, 
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
               {profile.avatar_url ? (
-                <img src={profile.avatar_url} alt={profile.username} className="h-14 w-14 rounded-full object-cover ring-2 ring-indigo-500/40" />
+                <img src={profile.avatar_url} alt={profile.username} className="h-14 w-14 rounded-full object-cover ring-2 ring-orange-500/40" />
               ) : (
-                <div className="h-14 w-14 rounded-full bg-indigo-600 flex items-center justify-center text-lg font-bold text-white">
+                <div className="h-14 w-14 rounded-full bg-orange-600 flex items-center justify-center text-lg font-bold text-white">
                   {profile.username?.[0]?.toUpperCase() ?? '?'}
                 </div>
               )}
@@ -147,7 +147,7 @@ export const PublicProfileModal: React.FC<PublicProfileModalProps> = ({ userId, 
                 onClick={() => setTab('problems')}
                 className={`flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-bold uppercase border-b-2 transition cursor-pointer ${
                   tab === 'problems'
-                    ? 'border-indigo-500 text-indigo-500'
+                    ? 'border-orange-500 text-orange-500'
                     : `border-transparent ${isDarkMode ? 'text-zinc-500 hover:text-zinc-300' : 'text-stone-400 hover:text-stone-600'}`
                 }`}
               >
@@ -157,7 +157,7 @@ export const PublicProfileModal: React.FC<PublicProfileModalProps> = ({ userId, 
                 onClick={() => setTab('solutions')}
                 className={`flex items-center gap-1.5 px-3 py-2 text-xs font-mono font-bold uppercase border-b-2 transition cursor-pointer ${
                   tab === 'solutions'
-                    ? 'border-indigo-500 text-indigo-500'
+                    ? 'border-orange-500 text-orange-500'
                     : `border-transparent ${isDarkMode ? 'text-zinc-500 hover:text-zinc-300' : 'text-stone-400 hover:text-stone-600'}`
                 }`}
               >

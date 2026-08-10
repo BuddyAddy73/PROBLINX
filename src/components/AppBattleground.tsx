@@ -69,8 +69,8 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
           </p>
           <div className={`flex items-center gap-2 rounded px-3 py-1.5 border font-mono text-xs ${
             isDarkMode
-              ? 'bg-[#141416] border-white/10 text-indigo-400'
-              : 'bg-indigo-50 border-indigo-200 text-indigo-800'
+              ? 'bg-[#141416] border-white/10 text-orange-400'
+              : 'bg-orange-50 border-orange-200 text-orange-800'
           }`}>
             <Timer className="h-3.5 w-3.5 animate-pulse" />
             <span className="font-bold">90S_TEST_PROTOCOL</span>
@@ -94,7 +94,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
               onFocus={() => setIsSearchFocused(true)}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="> FILTER_BY_KEYWORD..."
-              className={`w-full rounded-md border py-2.5 pl-10 pr-4 font-mono text-xs focus:border-indigo-500 focus:outline-none transition ${
+              className={`w-full rounded-md border py-2.5 pl-10 pr-4 font-mono text-xs focus:border-orange-500 focus:outline-none transition ${
                 isDarkMode
                   ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                   : 'border-stone-200 bg-white text-stone-900 placeholder-stone-400 shadow-xs'
@@ -113,7 +113,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
             >
               <div className="flex items-center justify-between px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500">
                 <span className="flex items-center gap-1.5">
-                  <History className="h-3 w-3 text-indigo-500" />
+                  <History className="h-3 w-3 text-orange-500" />
                   RECENT_SEARCHES
                 </span>
                 <button
@@ -165,7 +165,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
             onClick={() => setFilterType('all')}
             className={`rounded px-2.5 py-1 text-[11px] font-bold uppercase transition cursor-pointer ${
               filterType === 'all'
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : isDarkMode ? 'text-zinc-400 hover:text-white' : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -175,7 +175,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
             onClick={() => setFilterType('existing')}
             className={`rounded px-2.5 py-1 text-[11px] font-bold uppercase transition cursor-pointer ${
               filterType === 'existing'
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : isDarkMode ? 'text-zinc-400 hover:text-white' : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -185,7 +185,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
             onClick={() => setFilterType('would_build')}
             className={`rounded px-2.5 py-1 text-[11px] font-bold uppercase transition cursor-pointer ${
               filterType === 'would_build'
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : isDarkMode ? 'text-zinc-400 hover:text-white' : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -235,7 +235,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                     <img
                       src={sol.solver?.avatar_url || 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80'}
                       alt={sol.app_name}
-                      className="h-5 w-5 rounded-full object-cover border border-indigo-500/40"
+                      className="h-5 w-5 rounded-full object-cover border border-orange-500/40"
                     />
                     <span>{sol.app_name}</span>
                   </div>
@@ -248,8 +248,8 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                     {sol.is_existing_tool ? (
                       <span className={`inline-flex items-center gap-1 text-[11px] font-medium tracking-wide px-2 py-0.5 rounded uppercase border ${
                         isDarkMode
-                          ? 'bg-indigo-950/60 text-indigo-300 border-indigo-800/50'
-                          : 'bg-indigo-50 text-indigo-700 border-indigo-200'
+                          ? 'bg-orange-950/60 text-orange-300 border-orange-800/50'
+                          : 'bg-orange-50 text-orange-700 border-orange-200'
                       }`}>
                         <CheckCircle2 className="h-3 w-3" />
                         EXISTING
@@ -284,13 +284,13 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                   {sol.problem_title && (
                     <button
                       onClick={() => onOpenProblemForSolution(sol.problem_id)}
-                      className="text-left font-mono text-xs text-stone-400 dark:text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition cursor-pointer"
+                      className="text-left font-mono text-xs text-stone-400 dark:text-zinc-500 hover:text-orange-600 dark:hover:text-orange-400 transition cursor-pointer"
                     >
                       &gt; SOLVES: "{sol.problem_title}"
                     </button>
                   )}
 
-                  <div className={`mt-2 p-3 rounded border-l-2 border-indigo-500 text-[14px] font-normal leading-relaxed italic ${
+                  <div className={`mt-2 p-3 rounded border-l-2 border-orange-500 text-[14px] font-normal leading-relaxed italic ${
                     isDarkMode ? 'bg-[#0b0b0c] text-zinc-300' : 'bg-stone-100 text-stone-700'
                   }`}>
                     "{sol.pitch}"
@@ -310,7 +310,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                       href={sol.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline"
+                      className="flex items-center gap-1 text-orange-600 dark:text-orange-400 hover:underline"
                     >
                       <span>DEMO_LINK</span>
                       <ExternalLink className="h-3 w-3" />
@@ -338,7 +338,7 @@ export const AppBattleground: React.FC<AppBattlegroundProps> = ({
                 <button
                   id={`btn-test-review-${sol.id}`}
                   onClick={() => onTestAndReview(sol)}
-                  className="font-mono text-xs font-bold uppercase px-4 py-2.5 rounded bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer active:scale-95 flex items-center gap-1.5"
+                  className="font-mono text-xs font-bold uppercase px-4 py-2.5 rounded bg-orange-600 hover:bg-orange-500 text-white shadow-sm transition cursor-pointer active:scale-95 flex items-center gap-1.5"
                 >
                   <Timer className="h-3.5 w-3.5" />
                   <span>TEST (90S)</span>

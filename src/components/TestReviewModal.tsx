@@ -199,7 +199,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
 
         {/* Modal Header */}
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
+          <div className="flex items-center gap-2 text-xs font-mono font-medium text-orange-600 dark:text-orange-400">
             <Timer className="h-3.5 w-3.5" />
             <span>PROBLINX // 90S_TEST_PROTOCOL</span>
           </div>
@@ -212,12 +212,12 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
         </div>
 
         {/* Pitch Summary Box */}
-        <div className={`rounded border border-l-2 border-l-indigo-500 p-3.5 space-y-1 text-xs font-mono ${
+        <div className={`rounded border border-l-2 border-l-orange-500 p-3.5 space-y-1 text-xs font-mono ${
           isDarkMode
             ? 'border-white/10 bg-[#0b0b0c] text-zinc-300'
             : 'border-stone-200 bg-stone-50 text-stone-700'
         }`}>
-          <div className="text-[12px] font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">PITCH_SUMMARY:</div>
+          <div className="text-[12px] font-semibold tracking-wider text-orange-600 dark:text-orange-400 uppercase">PITCH_SUMMARY:</div>
           <p className="text-[13px] font-normal leading-relaxed italic">"{solution.pitch}"</p>
         </div>
 
@@ -225,10 +225,10 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
         {!hasLaunched ? (
           <div className={`rounded border p-6 text-center space-y-4 text-xs ${
             isDarkMode
-              ? 'border-indigo-500/30 bg-indigo-950/20'
-              : 'border-indigo-200 bg-indigo-50/50'
+              ? 'border-orange-500/30 bg-orange-950/20'
+              : 'border-orange-200 bg-orange-50/50'
           }`}>
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400 mx-auto border border-indigo-500/40">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500/20 text-orange-400 mx-auto border border-orange-500/40">
               <Play className="h-6 w-6 ml-0.5" />
             </div>
             <div className="space-y-1">
@@ -244,7 +244,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
               <button
                 id="btn-launch-tool-timer"
                 onClick={handleLaunchAndStartTimer}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-indigo-600 hover:bg-indigo-500 px-6 py-3 font-mono text-xs font-bold uppercase text-white shadow-lg cursor-pointer active:scale-95 transition"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-orange-600 hover:bg-orange-500 px-6 py-3 font-mono text-xs font-bold uppercase text-white shadow-lg cursor-pointer active:scale-95 transition"
               >
                 <span>LAUNCH APP & START 60S TIMER</span>
                 <ExternalLink className="h-4 w-4" />
@@ -265,8 +265,8 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
             <div className={`rounded border p-4 text-center transition-all ${
               timerComplete
                 ? isDarkMode
-                  ? 'border-indigo-500/50 bg-indigo-950/30'
-                  : 'border-indigo-300 bg-indigo-50'
+                  ? 'border-orange-500/50 bg-orange-950/30'
+                  : 'border-orange-300 bg-orange-50'
                 : isDarkMode
                   ? 'border-amber-400/40 bg-amber-400/10'
                   : 'border-amber-300 bg-amber-50'
@@ -274,7 +274,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
               <div className="flex items-center justify-center gap-2">
                 <Timer className={`h-5 w-5 ${
                   timerComplete
-                    ? 'text-indigo-400'
+                    ? 'text-orange-400'
                     : 'text-amber-400 animate-pulse'
                 }`} />
                 <span className={`text-xs font-mono font-bold uppercase ${
@@ -286,7 +286,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
 
               <div className={`mt-2 text-2xl font-mono font-extrabold ${isDarkMode ? 'text-white' : 'text-stone-900'}`}>
                 {timerComplete ? (
-                  <span className="text-indigo-600 dark:text-indigo-400 flex items-center justify-center gap-1">
+                  <span className="text-orange-600 dark:text-orange-400 flex items-center justify-center gap-1">
                     <CheckCircle2 className="h-6 w-6" /> VERIFIED
                   </span>
                 ) : (
@@ -300,7 +300,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
               }`}>
                 <div
                   className={`h-1.5 transition-all duration-1000 ${
-                    timerComplete ? 'bg-indigo-600' : 'bg-amber-400'
+                    timerComplete ? 'bg-orange-600' : 'bg-amber-400'
                   }`}
                   style={{ width: `${progressPercentage}%` }}
                 />
@@ -363,7 +363,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
                 <label className={`block text-[12px] font-semibold tracking-wider uppercase mb-1.5 ${
                   isDarkMode ? 'text-zinc-400' : 'text-stone-500'
                 }`}>
-                  1-LINE FEEDBACK <span className="text-indigo-500">*</span>
+                  1-LINE FEEDBACK <span className="text-orange-500">*</span>
                 </label>
                 <textarea
                   id="input-review-text"
@@ -372,7 +372,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
                   value={reviewText}
                   onChange={(e) => setReviewText(e.target.value)}
                   placeholder="e.g. Tested on M2 Mac. Transcribed 45m call in 1 min. Diarization identified speakers accurately!"
-                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-indigo-500 focus:outline-none resize-none ${
+                  className={`w-full rounded border p-3 text-[14px] font-normal focus:border-orange-500 focus:outline-none resize-none ${
                     isDarkMode
                       ? 'border-white/10 bg-[#0b0b0c] text-white placeholder-zinc-600'
                       : 'border-stone-200 bg-stone-50 text-stone-900 placeholder-stone-400'
@@ -385,7 +385,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
                 isDarkMode ? 'border-white/10' : 'border-stone-200'
               }`}>
                 <div className="text-[11px] font-mono flex items-center gap-1 opacity-60">
-                  <ShieldCheck className="h-3.5 w-3.5 text-indigo-500" />
+                  <ShieldCheck className="h-3.5 w-3.5 text-orange-500" />
                   <span>1 VOTE PER VERIFIED TESTER</span>
                 </div>
 
@@ -393,7 +393,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
                   type="submit"
                   id="btn-submit-review"
                   disabled={!timerComplete}
-                  className="rounded bg-indigo-600 hover:bg-indigo-500 disabled:bg-zinc-800 disabled:text-zinc-600 px-5 py-2 font-mono text-xs font-bold uppercase text-white cursor-pointer active:scale-95 transition shadow-sm"
+                  className="rounded bg-orange-600 hover:bg-orange-500 disabled:bg-zinc-800 disabled:text-zinc-600 px-5 py-2 font-mono text-xs font-bold uppercase text-white cursor-pointer active:scale-95 transition shadow-sm"
                 >
                   SUBMIT_REVIEW
                 </button>

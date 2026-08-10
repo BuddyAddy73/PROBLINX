@@ -24,8 +24,8 @@ export function calculateSolverRank(solutionsCount: number): SolverRankInfo {
     return {
       rank: 'Builder',
       label: 'Builder',
-      badgeClassLight: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-      badgeClassDark: 'bg-indigo-950/80 text-indigo-300 border-indigo-800/60',
+      badgeClassLight: 'bg-orange-50 text-orange-700 border-orange-200',
+      badgeClassDark: 'bg-orange-950/80 text-orange-300 border-orange-800/60',
     };
   }
   return {

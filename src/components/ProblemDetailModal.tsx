@@ -55,10 +55,10 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
           isDarkMode ? 'border-white/10' : 'border-stone-200'
         }`}>
           <div className="flex items-center justify-between gap-2 pr-8 font-mono text-xs">
-            <span className="text-indigo-600 dark:text-indigo-400 font-bold">PROBLINX // PROBLEM_DETAIL #{problem.id.slice(-4)}</span>
+            <span className="text-orange-600 dark:text-orange-400 font-bold">PROBLINX // PROBLEM_DETAIL #{problem.id.slice(-4)}</span>
             <div className="flex items-center gap-2">
               <span className={`px-2 py-0.5 rounded text-[11px] font-medium tracking-wide uppercase ${
-                problem.status === 'open' ? (isDarkMode ? 'bg-indigo-950/60 text-indigo-300 border border-indigo-800/50' : 'bg-indigo-50 text-indigo-700 border border-indigo-200') :
+                problem.status === 'open' ? (isDarkMode ? 'bg-orange-950/60 text-orange-300 border border-orange-800/50' : 'bg-orange-50 text-orange-700 border border-orange-200') :
                 problem.status === 'claimed' ? (isDarkMode ? 'bg-amber-950/60 text-amber-300 border border-amber-800/50' : 'bg-amber-50 text-amber-800 border border-amber-200') :
                 problem.status === 'in_review' ? (isDarkMode ? 'bg-slate-800/80 text-slate-300 border border-slate-700' : 'bg-slate-100 text-slate-700 border border-slate-200') :
                 'bg-purple-950/60 text-purple-300 border border-purple-800/50'
@@ -74,7 +74,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
 
           <div className="flex items-center gap-3 text-[12px] font-normal text-stone-400 dark:text-zinc-500">
             <div className="flex items-center gap-1.5">
-              <User className="h-3.5 w-3.5 text-indigo-500" />
+              <User className="h-3.5 w-3.5 text-orange-500" />
               <span>Posted by <strong className="font-medium text-stone-700 dark:text-zinc-300">{problem.poster?.display_name || 'Member'}</strong></span>
             </div>
             <span>•</span>
@@ -101,10 +101,10 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
 
           {/* What They Tried */}
           {problem.attempted_solutions && (
-            <div className={`rounded border-l-2 border-l-indigo-500 border-white/10 p-3.5 space-y-1 ${
+            <div className={`rounded border-l-2 border-l-orange-500 border-white/10 p-3.5 space-y-1 ${
               isDarkMode ? 'bg-[#0b0b0c]' : 'bg-stone-50'
             }`}>
-              <p className="text-[12px] font-semibold tracking-wider uppercase text-indigo-600 dark:text-indigo-400">
+              <p className="text-[12px] font-semibold tracking-wider uppercase text-orange-600 dark:text-orange-400">
                 ATTEMPTED_SOLUTIONS:
               </p>
               <p className={`text-[13px] font-normal leading-relaxed italic ${
@@ -135,7 +135,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
         }`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <MessageSquare className="h-4 w-4 text-indigo-500" />
+              <MessageSquare className="h-4 w-4 text-orange-500" />
               <h3 className="text-[12px] font-semibold tracking-wider text-stone-500 dark:text-zinc-500 uppercase">
                 PITCHED SOLUTIONS ({problemSolutions.length})
               </h3>
@@ -143,7 +143,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
 
             <button
               onClick={() => onSolveProblem(problem)}
-              className="flex items-center gap-1.5 rounded bg-indigo-600 hover:bg-indigo-500 px-3.5 py-1.5 font-mono text-xs font-bold uppercase text-white shadow-md transition cursor-pointer active:scale-95"
+              className="flex items-center gap-1.5 rounded bg-orange-600 hover:bg-orange-500 px-3.5 py-1.5 font-mono text-xs font-bold uppercase text-white shadow-md transition cursor-pointer active:scale-95"
             >
               <Plus className="h-3.5 w-3.5" />
               <span>PITCH_ALTERNATIVE</span>
@@ -159,7 +159,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
               <p className="text-xs">No solutions or pitches posted yet in this thread.</p>
               <button
                 onClick={() => onSolveProblem(problem)}
-                className="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline cursor-pointer uppercase"
+                className="text-xs text-orange-600 dark:text-orange-400 font-bold hover:underline cursor-pointer uppercase"
               >
                 BE THE FIRST SOLVER TO CLAIM & PITCH!
               </button>
@@ -174,14 +174,14 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                   className="relative pl-4 space-y-3 font-mono text-xs"
                 >
                   {/* Thread Node Connector Line Marker */}
-                  <div className={`absolute -left-[17px] top-3 h-3 w-3 rounded-full border-2 border-indigo-500 ${
+                  <div className={`absolute -left-[17px] top-3 h-3 w-3 rounded-full border-2 border-orange-500 ${
                     isDarkMode ? 'bg-[#0b0b0c]' : 'bg-white'
                   }`} />
 
                   <div className={`rounded border p-4 space-y-3 transition shadow-md ${
                     isDarkMode
-                      ? 'border-white/10 bg-[#0b0b0c] hover:border-indigo-500/40'
-                      : 'border-stone-200 bg-white hover:border-indigo-300'
+                      ? 'border-white/10 bg-[#0b0b0c] hover:border-orange-500/40'
+                      : 'border-stone-200 bg-white hover:border-orange-300'
                   }`}>
                     
                     {/* Thread Item Header */}
@@ -197,19 +197,19 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="text-[17px] font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug">{sol.app_name}</span>
-                            <span className="text-[11px] font-medium tracking-wide text-indigo-400 border border-indigo-500/30 bg-indigo-500/10 px-1.5 py-0.2 rounded uppercase">
+                            <span className="text-[11px] font-medium tracking-wide text-orange-400 border border-orange-500/30 bg-orange-500/10 px-1.5 py-0.2 rounded uppercase">
                               SOLVER
                             </span>
                             <span className={`text-[11px] font-mono font-medium tracking-wide px-2 py-0.2 rounded border uppercase ${
                               sol.is_existing_tool
-                                ? isDarkMode ? 'bg-indigo-950/60 text-indigo-300 border-indigo-800/50' : 'bg-indigo-50 text-indigo-700 border-indigo-200'
+                                ? isDarkMode ? 'bg-orange-950/60 text-orange-300 border-orange-800/50' : 'bg-orange-50 text-orange-700 border-orange-200'
                                 : isDarkMode ? 'bg-amber-950/60 text-amber-300 border-amber-800/50' : 'bg-amber-50 text-amber-800 border-amber-200'
                             }`}>
                               {sol.is_existing_tool ? 'EXISTING_TOOL' : 'WOULD_BUILD'}
                             </span>
                           </div>
                           <div className={`text-[12px] font-normal flex items-center gap-1.5 ${isDarkMode ? 'text-zinc-400' : 'text-stone-500'}`}>
-                            <span>Posted by <strong className="text-indigo-600 dark:text-indigo-400 font-medium">{sol.solver?.display_name}</strong></span>
+                            <span>Posted by <strong className="text-orange-600 dark:text-orange-400 font-medium">{sol.solver?.display_name}</strong></span>
                             {(() => {
                               const count = solutions.filter((s) => s.solver_id === sol.solver_id).length;
                               const r = calculateSolverRank(count);
@@ -236,7 +236,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                     </div>
 
                     {/* Pitch Content */}
-                    <div className={`rounded border-l-2 border-l-indigo-500 border-white/10 p-3 space-y-1 ${
+                    <div className={`rounded border-l-2 border-l-orange-500 border-white/10 p-3 space-y-1 ${
                       isDarkMode ? 'bg-[#141416]' : 'bg-stone-50'
                     }`}>
                       <p className={`text-[14px] font-normal leading-relaxed italic ${
@@ -257,16 +257,16 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                             ? 'border-white/10 bg-[#141416] text-zinc-300'
                             : 'border-stone-200 bg-stone-100 text-stone-700'
                         }`}>
-                          <button className="hover:text-indigo-500 transition cursor-pointer font-bold">▲</button>
+                          <button className="hover:text-orange-500 transition cursor-pointer font-bold">▲</button>
                           <span className="font-bold">{sol.reviews_count * 3 + 1}</span>
                           <button className="hover:text-red-500 transition cursor-pointer font-bold">▼</button>
                         </div>
 
                         <button
                           onClick={() => { onClose(); onTestAndReview(sol); }}
-                          className="flex items-center gap-1 text-xs transition cursor-pointer font-bold uppercase opacity-80 hover:opacity-100 hover:text-indigo-500"
+                          className="flex items-center gap-1 text-xs transition cursor-pointer font-bold uppercase opacity-80 hover:opacity-100 hover:text-orange-500"
                         >
-                          <MessageSquare className="h-3.5 w-3.5 text-indigo-500" />
+                          <MessageSquare className="h-3.5 w-3.5 text-orange-500" />
                           <span>REPLY / REVIEW</span>
                         </button>
                       </div>
@@ -277,7 +277,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
                             href={sol.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-indigo-600 dark:text-indigo-400 font-mono hover:underline flex items-center gap-1 text-xs font-bold"
+                            className="text-orange-600 dark:text-orange-400 font-mono hover:underline flex items-center gap-1 text-xs font-bold"
                           >
                             <span>DEMO_URL</span>
                             <ExternalLink className="h-3 w-3" />
@@ -292,7 +292,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
 
                         <button
                           onClick={() => { onClose(); onTestAndReview(sol); }}
-                          className="rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-1.5 font-mono text-xs font-bold uppercase text-white transition cursor-pointer active:scale-95 shadow-sm"
+                          className="rounded bg-orange-600 hover:bg-orange-500 px-3 py-1.5 font-mono text-xs font-bold uppercase text-white transition cursor-pointer active:scale-95 shadow-sm"
                         >
                           TEST & REVIEW
                         </button>

@@ -344,7 +344,7 @@ export default function App() {
             ? 'border-white/10 bg-[#121824] text-white ring-1 ring-white/10'
             : 'border-slate-200 bg-white text-slate-900 shadow-slate-200'
         }`}>
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-500/20 text-orange-400">
             <Check className="h-4 w-4" />
           </div>
           <span>{toastMessage}</span>
@@ -411,7 +411,7 @@ export default function App() {
       }`}>
         <div className="flex items-center space-x-6 font-bold">
           <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+            <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
             Grid Status: Operational
           </span>
           <span className="hidden sm:inline">Active Solvers: 1,204</span>

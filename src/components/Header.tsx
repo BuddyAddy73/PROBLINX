@@ -94,8 +94,8 @@ export const Header: React.FC<HeaderProps> = ({
               className={`flex items-center justify-center gap-1.5 rounded-md px-3 sm:px-4 py-1.5 font-semibold transition-all duration-200 cursor-pointer ${
                 activeStream === 'problems'
                   ? isDarkMode
-                    ? 'bg-indigo-600 text-white font-extrabold shadow-sm'
-                    : 'bg-indigo-600 text-white font-bold'
+                    ? 'bg-orange-600 text-white font-extrabold shadow-sm'
+                    : 'bg-orange-600 text-white font-bold'
                   : isDarkMode
                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
                     : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
@@ -119,8 +119,8 @@ export const Header: React.FC<HeaderProps> = ({
               className={`flex items-center justify-center gap-1.5 rounded-md px-3 sm:px-4 py-1.5 font-semibold transition-all duration-200 cursor-pointer ${
                 activeStream === 'battleground'
                   ? isDarkMode
-                    ? 'bg-indigo-600 text-white font-extrabold shadow-sm'
-                    : 'bg-indigo-600 text-white font-bold'
+                    ? 'bg-orange-600 text-white font-extrabold shadow-sm'
+                    : 'bg-orange-600 text-white font-bold'
                   : isDarkMode
                     ? 'text-zinc-400 hover:text-white hover:bg-white/5'
                     : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
@@ -224,10 +224,10 @@ export const Header: React.FC<HeaderProps> = ({
                   <img
                     src={currentUser.avatar_url}
                     alt={currentUser.display_name}
-                    className="h-5 w-5 rounded-full object-cover ring-1 ring-indigo-500/40"
+                    className="h-5 w-5 rounded-full object-cover ring-1 ring-orange-500/40"
                   />
                 ) : (
-                  <div className="h-5 w-5 rounded-full bg-indigo-600 flex items-center justify-center text-[9px] font-bold text-white">
+                  <div className="h-5 w-5 rounded-full bg-orange-600 flex items-center justify-center text-[9px] font-bold text-white">
                     {currentUser.display_name?.[0]?.toUpperCase() ?? '?'}
                   </div>
                 )}
@@ -292,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             id="btn-post-problem-header"
             onClick={onOpenPostProblem}
-            className="flex items-center gap-1.5 rounded-md bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 font-mono text-xs font-bold uppercase text-white shadow-md shadow-indigo-600/20 transition cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 rounded-md bg-orange-600 hover:bg-orange-500 px-3.5 py-2 font-mono text-xs font-bold uppercase text-white shadow-md shadow-orange-600/20 transition cursor-pointer active:scale-95"
           >
             <Plus className="h-3.5 w-3.5" />
             <span>+ POST NEW PAIN</span>
