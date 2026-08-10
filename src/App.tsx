@@ -416,7 +416,7 @@ export default function App() {
           </span>
           <span className="hidden sm:inline">Active Solvers: 1,204</span>
         </div>
-        <div>© 2026 SOLV / GRID // V.1.0.4-BETA</div>
+        <div>© 2026 PROBLINX // V.1.0.4-BETA</div>
       </footer>
 
       {/* Modals */}

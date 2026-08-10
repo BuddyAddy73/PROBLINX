@@ -62,17 +62,17 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left: Brand / Logo + System Sub */}
         <div className="flex items-center gap-3 sm:gap-4">
           <div className="flex items-center gap-2">
-            <div className={`flex h-8 w-8 items-center justify-center rounded-md font-mono font-bold text-xs transition ${
-              isDarkMode
-                ? 'bg-indigo-500/10 border border-indigo-500/30 text-indigo-400'
-                : 'bg-indigo-50 border border-indigo-200 text-indigo-700'
-            }`}>
-              SG
-            </div>
+            <img
+              src="/icon-192.png"
+              alt="Problinx"
+              className="h-8 w-8 object-contain"
+            />
             <div className="flex flex-col">
-              <span className="text-lg font-semibold tracking-tight leading-none">
-                SOLV<span className="text-indigo-600 dark:text-indigo-400">/</span>GRID
-              </span>
+              <img
+                src={isDarkMode ? '/logo-dark.png' : '/logo-light.png'}
+                alt="Problinx"
+                className="h-5 w-auto object-contain object-left"
+              />
               <span className="font-mono text-[10px] tracking-wider text-stone-400 dark:text-zinc-500 uppercase mt-0.5">
                 MATCHMAKING_SYS
               </span>

@@ -55,7 +55,7 @@ export const ProblemDetailModal: React.FC<ProblemDetailModalProps> = ({
           isDarkMode ? 'border-white/10' : 'border-stone-200'
         }`}>
           <div className="flex items-center justify-between gap-2 pr-8 font-mono text-xs">
-            <span className="text-indigo-600 dark:text-indigo-400 font-bold">SOLV / GRID // PROBLEM_DETAIL #{problem.id.slice(-4)}</span>
+            <span className="text-indigo-600 dark:text-indigo-400 font-bold">PROBLINX // PROBLEM_DETAIL #{problem.id.slice(-4)}</span>
             <div className="flex items-center gap-2">
               <span className={`px-2 py-0.5 rounded text-[11px] font-medium tracking-wide uppercase ${
                 problem.status === 'open' ? (isDarkMode ? 'bg-indigo-950/60 text-indigo-300 border border-indigo-800/50' : 'bg-indigo-50 text-indigo-700 border border-indigo-200') :

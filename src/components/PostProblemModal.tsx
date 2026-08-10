@@ -91,7 +91,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>SOLV / GRID // POST_PROBLEM</span>
+            <span>PROBLINX // POST_PROBLEM</span>
           </div>
           <h2 className="text-[17px] sm:text-xl font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug uppercase">
             POST A PROBLEM WISHLIST ITEM
@@ -250,7 +250,7 @@ export const PostProblemModal: React.FC<PostProblemModalProps> = ({
               id="btn-submit-problem-form"
               className="rounded bg-indigo-600 hover:bg-indigo-500 px-5 py-2 font-mono text-xs font-bold uppercase text-white shadow-sm cursor-pointer active:scale-95 transition"
             >
-              POST_TO_GRID
+              POST_TO_PROBLINX
             </button>
           </div>
 

@@ -43,7 +43,7 @@ export const mockUsers: Record<string, User> = {
   },
   currentUser: {
     id: 'cur_user',
-    email: 'user@solvgrid.io',
+    email: 'user@problinx.app',
     display_name: 'Member (User)',
     role: 'member',
     is_seed_account: false,
@@ -107,7 +107,7 @@ export const initialSolutions: Solution[] = [
     solver: mockUsers.u3,
     app_name: 'WhisperDesk Local',
     pitch: 'Zero-cloud desktop audio recorder & transcript engine. Uses whisper.cpp with native M-series & RTX GPU acceleration. 100% offline, automatic speaker diarization, instant markdown export.',
-    link: 'https://whisperdesk.demo.solvgrid.dev',
+    link: 'https://whisperdesk.demo.problinx.app',
     is_existing_tool: true,
     claimed_at: '2026-07-19T10:00:00Z',
     submitted_at: '2026-07-19T18:30:00Z',

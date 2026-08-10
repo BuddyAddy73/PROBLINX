@@ -98,7 +98,7 @@ export const SubmitSolutionModal: React.FC<SubmitSolutionModalProps> = ({
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
             <Swords className="h-3.5 w-3.5" />
-            <span>SOLV / GRID // SUBMIT_PITCH</span>
+            <span>PROBLINX // SUBMIT_PITCH</span>
           </div>
           <h2 className="text-[17px] sm:text-xl font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug uppercase">
             PITCH SOLUTION FOR PROBLEM

@@ -115,7 +115,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
           )}
         </div>
         <p className={`text-xs mb-3 ${isDarkMode ? 'text-zinc-500' : 'text-stone-500'}`}>
-          Describes how you show up on SOLV / GRID. Changeable once every {TAG_COOLDOWN_DAYS} days.
+          Describes how you show up on Problinx. Changeable once every {TAG_COOLDOWN_DAYS} days.
         </p>
 
         <div className="space-y-2 mb-4">

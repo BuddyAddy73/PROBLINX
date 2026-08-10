@@ -201,7 +201,7 @@ export const TestReviewModal: React.FC<TestReviewModalProps> = ({
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
             <Timer className="h-3.5 w-3.5" />
-            <span>SOLV / GRID // 90S_TEST_PROTOCOL</span>
+            <span>PROBLINX // 90S_TEST_PROTOCOL</span>
           </div>
           <h2 className="text-[17px] sm:text-xl font-medium tracking-tight text-stone-900 dark:text-zinc-100 leading-snug uppercase">
             TESTING {solution.app_name}

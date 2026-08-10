@@ -1,6 +1,6 @@
 {
-  "name": "SOLV / GRID",
-  "description": "Problem-First Matchmaking Platform — SOLV / GRID",
+  "name": "Problinx",
+  "description": "Problem-First Matchmaking Platform — Problinx",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
