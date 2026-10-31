@@ -25,3 +25,7 @@ yarn-error.log*
 
 # TypeScript build info
 *.tsbuildinfo
+node_modules
+dist
+.env
+.env.local
