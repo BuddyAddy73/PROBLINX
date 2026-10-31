@@ -1,14 +1,14 @@
 # Problinx
 
-**A place where problems meet the people willing to actually solve them — and prove it.**
+**A place where problems meet the people willing to actually solve them and prove it.**
 
 ---
 
 ## What it is
 
-Most of the internet is full of threads like *"what should I use for X?"* — buried in Reddit comments, forgotten Discord messages, or drowned out in a Product Hunt feed optimized for launch-day hype rather than whether the thing actually works.
+Most of the internet is full of threads like *"what should I use for X?"* - buried in Reddit comments, forgotten Discord messages, or drowned out in a Product Hunt feed optimized for launch-day hype rather than whether the thing actually works.
 
-Problinx flips that. You post a real problem. Builders pitch real solutions — either something that already exists, or something they'd build from scratch. And before anyone's vote counts, they have to actually go test the thing for themselves. No upvoting based on vibes. No astroturfed five-star reviews from accounts that never touched the product. If you didn't try it, you don't get a say.
+Problinx flips that. You post a real problem. Builders pitch real solutions - either something that already exists, or something they'd build from scratch. And before anyone's vote counts, they have to actually go test the thing for themselves. No upvoting based on vibes. No astroturfed five-star reviews from accounts that never touched the product. If you didn't try it, you don't get a say.
 
 It's a small, honest idea: **let the people who need something and the people who can build it find each other, and make sure the feedback in between is real.**
 
@@ -35,11 +35,11 @@ Ratings build up from people who genuinely used the thing, not from whoever show
 ## What you can actually do right now
 
 - **Post problems** to the public Wishlist, with a short writeup of what you've already tried
-- **Pitch a solution** — as an existing tool with a live link, or as a proposal with an honest build timeline
+- **Pitch a solution** - as an existing tool with a live link, or as a proposal with an honest build timeline
 - **Test and review** a pitched solution through the guarded 90-second flow, with your rating and written feedback attached to your real account
 - **Upvote problems** you want solved (one vote per person, no spamming the button)
 - **Sign in with Google**, or just browse anonymously if you're not ready to commit to an account yet
-- **Set a tag on your profile** — Builder, Scout, or Surfer — describing how you actually show up here, changeable once every two days so it stays honest rather than something you flip on a whim
+- **Set a tag on your profile** — Builder, Scout, or Surfer -  describing how you actually show up here, changeable once every two days so it stays honest rather than something you flip on a whim
 - **Search for other users** (`Ctrl/Cmd + K` from anywhere) and see everything they've posted or pitched, in one place
 - **Switch between dark and light mode**, because it's 2026 and that shouldn't need explaining
 
